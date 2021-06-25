@@ -1,0 +1,22 @@
+{
+  "files.exclude": {
+    "**/.{git,venv}": true, // Environment
+    "**.{coverage}": true, // Testing stuff
+    "**/__pycache__": true
+  },
+
+  "python.pythonPath": "${workspaceFolder}/.venv/scripts/python",
+  "python.languageServer": "Pylance",
+
+  "python.sortImports.path": "${workspaceFolder}/.venv/scripts/isort",
+  "python.sortImports.args": [],
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": ["-l", "79"],
+  "python.formatting.blackPath": "${workspaceFolder}/.venv/scripts/black"
+}

@@ -1,0 +1,17 @@
+# Environment
+.venv
+.env
+
+# Editors / IDEs
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# Python
+*.pyc
+*.egg-info
+__pycache__
+
+# Testing
+.coverage
+tests/build

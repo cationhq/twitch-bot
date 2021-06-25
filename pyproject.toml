@@ -1,0 +1,59 @@
+[tool.poetry]
+name = "twitch-bot"
+version = "0.1.0"
+description = "A template for creation of Twitch bots."
+authors = ["cationhq"]
+
+[tool.black]
+line-length = 79
+
+[tool.isort]
+profile = "black"
+line_length = 79
+
+[tool.ward]
+path = ["tests/unit"]
+capture-output = true
+order = "standard"
+output-mode = "test-per-line"
+fail-limit = 1
+progress-style = ["bar"]
+
+[tool.coverage.run]
+source = ["app"]
+
+[tool.coverage.xml]
+output="tests/build/coverage.xml"
+
+[tool.coverage.report]
+fail_under = 100
+exclude_lines = [
+  "def prepare(bot)*",
+  "bot.add_cog(\\*)",
+  "pragma: no cover"
+]
+omit = [
+  "*__main__.py",
+]
+
+[tool.coverage.html]
+directory = "tests/build/coverage"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+python-dotenv = "^0.17.1"
+twitchio = "2.0.0b7"
+
+[tool.poetry.dev-dependencies]
+isort = "^5.9.1"
+black = "^21.6b0"
+coverage = {extras = ["toml"], version = "^5.5"}
+Faker = "^8.8.2"
+autoflake = "^1.4"
+pydocstyle = "^6.1.1"
+radon = "^5.0.1"
+ward = "^0.62.0-beta.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
